@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Black November no Gobbo Creative Studio: ensaios fotográficos no estúdio com valor de Black Friday, instax na hora e vídeo de backstage de presente.">
+<meta property="og:title" content="Black November · Gobbo Creative Studio">
+<meta property="og:description" content="Ensaios fotográficos no estúdio com valor de Black Friday. Reserve em novembro e fotografe quando quiser.">
+<meta property="og:image" content="estudio-camera.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}html{overflow-x:hidden}</style>
+<title>Gobbo Black November</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Caveat:wght@600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: you hold the key light. Hero = studio photo revealed by a moving spotlight; packages = instax prints; studio = live viewfinder. Single dark look in the brand's brown and gold. */
+:root{
+  --ground:#1a110c;
+  --ground-2:#2c1d14;
+  --panel:#3d2416;
+  --cream:#fbf6ef;
+  --print:#f7f2ea;        /* moldura da instax */
+  --muted:#c2ad9a;
+  --line:#5a4232;
+  --gold:#e2b977;
+  --gold-hi:#f3d39c;
+  --gold-ink:#24170d;
+  --display:"Anton", "Arial Narrow", Impact, sans-serif;
+  --heavy:"Archivo Black", "Arial Black", system-ui, sans-serif;
+  --body:"Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Caveat", "Segoe Print", cursive;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.label{font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0}
+h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(48px,8vw,104px);line-height:.9;margin:0;text-wrap:balance}
+h2 em{font-style:normal;color:var(--gold)}
+
+/* grain over everything, like film */
+.grain{position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+@media (prefers-reduced-motion:no-preference){.grain{animation:grain 1.2s steps(6) infinite}
+  @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}}
+
+/* ---------- nav ---------- */
+.nav{position:absolute;top:0;left:0;right:0;z-index:20}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:18px;gap:12px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo img{display:block;height:48px;width:auto}
+@media (max-width:440px){.logo img{height:38px}}
+.logo .dots{display:grid;grid-template-columns:repeat(2,13px);gap:3px}
+.logo .dots i{width:13px;height:13px;border:3px solid var(--gold);border-radius:50%}
+.logo b{font-family:var(--heavy);font-weight:400;font-size:15px;letter-spacing:.28em;line-height:1.1;display:block}
+.logo small{display:block;font-size:10px;font-weight:300;letter-spacing:.34em;color:var(--muted)}
+.pill{font-size:14px;font-weight:600;text-decoration:none;padding:10px 18px;border:1px solid var(--gold);border-radius:999px;transition:background .2s,color .2s}
+.pill:hover{background:var(--gold);color:var(--gold-ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;--x:72%;--y:42%}
+.hero .bg,.hero .lit{position:absolute;inset:0;background:url(estudio-camera.jpg) 78% 55%/cover no-repeat;z-index:-3}
+.hero .bg{filter:sepia(.85) saturate(1.2) brightness(.32)}
+.hero .lit{z-index:-2;filter:sepia(.35) saturate(1.05) brightness(.95) contrast(1.05);
+  -webkit-mask-image:radial-gradient(circle 260px at var(--x) var(--y), #000 0%, rgba(0,0,0,.55) 45%, transparent 100%);
+          mask-image:radial-gradient(circle 260px at var(--x) var(--y), #000 0%, rgba(0,0,0,.55) 45%, transparent 100%)}
+.hero .shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg, rgba(26,17,12,.92) 0%, rgba(26,17,12,.55) 48%, rgba(26,17,12,.1) 100%), linear-gradient(0deg, var(--ground) 0%, transparent 30%)}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:30}
+.hero .wrap{padding-block:130px 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:32px;align-items:end;min-height:min(860px,96svh)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.kicker i{width:9px;height:9px;border-radius:50%;background:#e5533d;box-shadow:0 0 12px #e5533d}
+@media (prefers-reduced-motion:no-preference){.kicker i{animation:blink 1.2s steps(2) infinite}@keyframes blink{50%{opacity:.15}}}
+h1{font-family:var(--display);font-weight:400;text-transform:uppercase;margin:14px 0 0;line-height:.92;font-size:clamp(72px,14vw,200px);letter-spacing:-.01em}
+.hero .wrap > div:first-child{min-width:0}
+.studio h2{font-size:clamp(48px,6.5vw,88px)}
+.marquees{overflow:hidden;padding-block:40px 16px}
+h1 .l{display:block;overflow:hidden;padding:.08em .04em .04em;margin:-.06em -.04em 0}
+h1 .l span{display:block}
+h1 .out{color:transparent;-webkit-text-stroke:2px var(--cream)}
+h1 .gold{background:linear-gradient(100deg,var(--gold) 0%,var(--gold-hi) 40%,var(--gold) 60%,#b98d4f 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (prefers-reduced-motion:no-preference){
+  h1 .l span{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  h1 .l:nth-child(2) span{animation-delay:.12s}
+  h1 .gold{animation:rise .9s cubic-bezier(.2,.8,.2,1) .12s both, sheen 4s ease-in-out 1.2s infinite}
+  @keyframes rise{from{transform:translateY(100%)}to{transform:none}}
+  @keyframes sheen{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+}
+.lead{margin:22px 0 0;font-size:clamp(17px,1.8vw,21px);max-width:30ch;line-height:1.4}
+.lead b{color:var(--gold);font-weight:600}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 28px;border-radius:999px;background:var(--gold);color:var(--gold-ink);font-weight:600;font-size:16px;text-decoration:none;transition:box-shadow .25s, background .2s;will-change:transform}
+.btn:hover{background:var(--gold-hi);box-shadow:0 14px 40px -12px rgba(226,185,119,.8)}
+.btn.ghost{background:rgba(26,17,12,.4);color:var(--cream);border:1px solid rgba(251,246,239,.35);backdrop-filter:blur(6px)}
+.btn.ghost:hover{border-color:var(--gold);box-shadow:none}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* rotating stamp */
+.stamp{position:relative;width:190px;height:190px;flex:none;margin-bottom:8px}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%}
+.stamp text{font-family:var(--body);font-weight:600;font-size:12.5px;letter-spacing:3.2px;fill:var(--cream);text-transform:uppercase}
+@media (prefers-reduced-motion:no-preference){.stamp .ring{animation:spin 16s linear infinite;transform-origin:50% 50%}@keyframes spin{to{transform:rotate(360deg)}}}
+.stamp .core{position:absolute;inset:34px;border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-content:center;text-align:center;box-shadow:0 0 0 6px rgba(226,185,119,.2)}
+.stamp .core small{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.stamp .core b{font-family:var(--display);font-weight:400;font-size:46px;line-height:.95}
+
+/* countdown strip */
+.count{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(26,17,12,.7);backdrop-filter:blur(6px)}
+.count .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;padding-block:16px}
+.count .lbl{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.digits{display:flex;gap:10px;align-items:flex-start}
+.digits div{display:flex;flex-direction:column;align-items:center;min-width:64px}
+.digits b{font-family:var(--display);font-weight:400;font-size:44px;line-height:1;font-variant-numeric:tabular-nums;display:block;background:var(--ground-2);border:1px solid var(--line);padding:6px 10px;border-radius:8px;min-width:64px;text-align:center}
+.digits b.tick{animation:pop .35s ease-out}
+@keyframes pop{from{transform:translateY(-6px);color:var(--gold)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.digits b.tick{animation:none}}
+.digits small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.digits .sep{font-family:var(--display);font-size:36px;color:var(--gold);padding-top:8px;min-width:0}
+
+/* ---------- marquee ---------- */
+.marquee{position:relative;z-index:2;margin:0 -2% 0;transform:rotate(-2.4deg);background:var(--gold);color:var(--gold-ink);overflow:hidden;border-block:2px solid var(--gold-ink);box-shadow:0 18px 40px -20px #000}
+.marquee.b{transform:rotate(1.6deg);background:var(--panel);color:var(--gold);margin-top:-14px;border-color:var(--ground)}
+.track{display:flex;width:max-content}
+.track span{font-family:var(--display);font-size:clamp(28px,4vw,46px);text-transform:uppercase;white-space:nowrap;padding:10px 0;display:flex;align-items:center}
+.track span::after{content:"";width:16px;height:16px;border:3px solid currentColor;border-radius:50%;margin:0 28px}
+@media (prefers-reduced-motion:no-preference){.track{animation:slide 28s linear infinite}.marquee.b .track{animation-direction:reverse;animation-duration:34s}@keyframes slide{to{transform:translateX(-50%)}}}
+
+/* ---------- packages = instax ---------- */
+.sec{padding-block:80px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:48px}
+.head p{margin:0;color:var(--muted);max-width:40ch}
+.prints{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;perspective:1200px;max-width:980px;margin:0 auto}
+.print{background:var(--print);color:var(--gold-ink);padding:18px 18px 0;border-radius:4px;box-shadow:0 30px 60px -25px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.2);transform:rotate(var(--r,-2deg));transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .3s;transform-style:preserve-3d;display:flex;flex-direction:column;min-width:0}
+.print:nth-child(2){--r:2.2deg}
+.print:hover{box-shadow:0 40px 80px -25px rgba(0,0,0,.95)}
+.shot{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:#2a1b12;color:var(--cream);padding:22px;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
+.shot::before{content:"";position:absolute;inset:0;z-index:-1;background:url(estudio-set.jpg) center 60%/cover;filter:sepia(.8) brightness(.38) saturate(1.1)}
+.print:nth-child(2) .shot::before{background-image:url(estudio-camera.jpg);background-position:70% 60%}
+.shot::after{content:"";position:absolute;inset:0;z-index:2;background:#fbf6ef;opacity:0;pointer-events:none}
+.print.dev .shot::after{animation:develop 1.8s ease-out both}
+@keyframes develop{0%{opacity:.85}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.print.dev .shot::after{animation:none}}
+.shot .row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.shot .opt{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.shot h3{font-family:var(--heavy);font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.2vw,36px);line-height:1;margin:6px 0 0}
+.tag{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:var(--gold);color:var(--gold-ink);white-space:nowrap}
+.price{display:flex;align-items:flex-start;gap:6px;line-height:1}
+.price small{font-family:var(--heavy);color:var(--gold);font-size:clamp(20px,2.4vw,28px);line-height:1.05;margin:auto 0 .28em 10px;text-transform:uppercase}
+.price b{font-family:var(--display);font-weight:400;font-size:clamp(88px,11vw,128px);letter-spacing:-.01em}
+.shot ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.shot li{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:rgba(251,246,239,.12);border:1px solid rgba(251,246,239,.22);backdrop-filter:blur(4px)}
+.caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 4px 18px;min-height:86px}
+.caption p{margin:0;font-family:var(--hand);font-weight:700;font-size:28px;line-height:1.05;color:#5b3a24;transform:rotate(-1.5deg)}
+.caption .btn{padding:13px 20px;font-size:15px;background:var(--gold-ink);color:var(--gold)}
+.caption .btn:hover{background:#3d2416;box-shadow:none}
+
+.bonus{max-width:980px;margin:56px auto 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding:22px 26px;border:1px dashed var(--gold);border-radius:14px}
+.rec{position:relative;width:132px;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:url(estudio-set.jpg) 40% center/cover;filter:sepia(.4)}
+.rec::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 70%,rgba(0,0,0,.5))}
+.rec span{position:absolute;z-index:1;top:8px;left:8px;font-size:10px;font-weight:600;letter-spacing:.1em;color:#fff;display:flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums}
+.rec span::before{content:"";width:7px;height:7px;border-radius:50%;background:#e5533d}
+.bonus b{font-family:var(--hand);font-size:34px;color:var(--gold);line-height:1;display:block}
+.bonus p{margin:6px 0 0;font-family:var(--heavy);font-size:clamp(19px,2.4vw,26px);line-height:1.2}
+.bonus small{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+
+/* ---------- studio viewfinder ---------- */
+.studio{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.vf{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;max-width:100%}
+.vf img,.vf video{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);transition:transform .2s linear;background:#2a1b12}
+.snd{position:absolute;z-index:3;right:20px;bottom:56px;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(251,246,239,.4);background:rgba(26,17,12,.6);backdrop-filter:blur(6px);color:var(--cream);font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
+.snd:hover{border-color:var(--gold)}
+.snd[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.snd svg{width:18px;height:18px}
+.vf .hud{position:absolute;inset:0;pointer-events:none;font-size:11px;font-weight:600;letter-spacing:.12em;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.vf .c{position:absolute;width:30px;height:30px;border:2px solid #fff;opacity:.85}
+.vf .tl{top:16px;left:16px;border-width:2px 0 0 2px}.vf .tr{top:16px;right:16px;border-width:2px 2px 0 0}
+.vf .bl{bottom:16px;left:16px;border-width:0 0 2px 2px}.vf .br{bottom:16px;right:16px;border-width:0 2px 2px 0}
+.vf .af{position:absolute;left:38%;top:57%;width:64px;height:48px;border:2px solid #7fe08a;transform:translate(-50%,-50%)}
+@media (prefers-reduced-motion:no-preference){.vf .af{animation:focus 3.2s ease-in-out infinite}@keyframes focus{0%,20%{transform:translate(-50%,-50%) scale(1.5);border-color:#fff;opacity:.6}35%,100%{transform:translate(-50%,-50%) scale(1);border-color:#7fe08a;opacity:1}}}
+.vf .top{position:absolute;top:22px;left:56px;right:56px;display:flex;justify-content:space-between}
+.vf .top .r{display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.vf .top .r::before{content:"";width:8px;height:8px;border-radius:50%;background:#e5533d}
+.vf .bot{position:absolute;bottom:24px;left:56px;right:56px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.studio .txt{display:flex;flex-direction:column;gap:20px;min-width:0}
+.studio .txt>p{margin:0;color:var(--muted);max-width:42ch}
+.kit{list-style:none;margin:0;padding:0;display:grid}
+.kit li{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;border-top:1px solid var(--line);padding-block:12px}
+.kit li b{font-weight:600}
+.kit li span{color:var(--muted)}
+.addr{display:flex;flex-direction:column;gap:4px;padding:18px 20px;background:var(--panel);border-radius:10px}
+.addr strong{font-family:var(--heavy);font-weight:400;font-size:clamp(20px,2.6vw,26px);line-height:1.15}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.step{padding:28px;position:relative;min-width:0;transition:background .3s}
+.step+.step{border-left:1px solid var(--line)}
+.step:hover{background:var(--ground-2)}
+.step .n{font-family:var(--display);font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--gold)}
+.step h4{font-family:var(--heavy);font-weight:400;text-transform:uppercase;font-size:20px;margin:12px 0 6px;line-height:1.15}
+.step p{margin:0;color:var(--muted);font-size:15px}
+
+/* ---------- final ---------- */
+.final{position:relative;overflow:hidden;text-align:center;isolation:isolate}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 60% at 50% 45%, rgba(226,185,119,.22), transparent 70%)}
+.final .wrap{padding-block:96px 72px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.final h2{font-size:clamp(56px,11vw,150px)}
+.big{font-size:clamp(17px,2vw,20px);padding:22px 38px}
+.phone{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--muted)}
+.phone span{user-select:all;color:var(--cream);font-weight:600;letter-spacing:.04em}
+.copy{font:inherit;font-size:12px;color:var(--gold);background:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer}
+.copy:hover{border-color:var(--gold)}
+.rules{font-size:13px;color:var(--muted);margin:10px 0 0;max-width:62ch;font-style:italic}
+.rules strong{color:var(--cream);font-weight:600}
+footer{border-top:1px solid var(--line);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+footer .wrap{padding-block:22px 96px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (min-width:861px){footer .wrap{padding-block:22px}}
+
+/* scroll reveal */
+.pre{opacity:.15;transform:translateY(48px) scale(.98)}
+.head,.bonus,.vf,.studio .txt > *,.step,.final .wrap > *{transition:opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1)}
+.print.pre{transform:translateY(70px) rotate(calc(var(--r,-2deg) * 3))}
+.print{transition:transform .9s cubic-bezier(.2,.8,.2,1), opacity .8s ease, box-shadow .3s}
+
+
+/* ---------- portfolio film strip ---------- */
+.port{padding-block:72px 64px;overflow:hidden}
+@media (max-width:600px){.frame{width:80vw}}
+.port .head{margin-bottom:36px}
+.port-ctrl{display:flex;gap:10px;align-items:center}
+.arrow{width:52px;height:52px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--gold);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.arrow:hover{background:var(--gold);color:var(--gold-ink);transform:scale(1.06)}
+.arrow svg{width:20px;height:20px}
+.film{position:relative;background:#0e0907;padding-block:30px;transform:rotate(-1.2deg);margin-inline:-2%;box-shadow:0 30px 60px -30px #000}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg, transparent 0 14px, rgba(251,246,239,.85) 14px 28px, transparent 28px 40px);-webkit-mask:linear-gradient(#000 0 0);opacity:.55}
+.film::before{top:8px}.film::after{bottom:8px}
+.strip{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;cursor:grab;padding-inline:14px;-webkit-overflow-scrolling:touch}
+.strip::-webkit-scrollbar{display:none}
+.strip.drag{cursor:grabbing}
+.frame{position:relative;flex:none;width:clamp(270px,36vw,480px);aspect-ratio:3/4;padding:0;border:0;border-radius:3px;overflow:hidden;background:#2a1b12;cursor:zoom-in}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transform:scale(1.01);transition:transform .7s cubic-bezier(.2,.8,.2,1);pointer-events:none;user-select:none}
+.frame:hover img,.frame:focus-visible img{transform:scale(1.06)}
+.frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(226,185,119,.15);transition:box-shadow .3s}
+.frame:hover::after{box-shadow:inset 0 0 0 3px var(--gold)}
+.edge{position:absolute;left:10px;bottom:8px;font-size:10px;font-weight:600;letter-spacing:.18em;color:#f2a93b;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+.fa{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:56px;height:56px;background:var(--gold);color:var(--gold-ink);border-color:var(--gold);box-shadow:0 10px 30px -8px rgba(0,0,0,.8)}
+.fa:hover{transform:translateY(-50%) scale(1.08)}
+.fa svg{width:24px;height:24px;stroke-width:2.5}
+.fa-prev{left:max(20px, calc(env(safe-area-inset-left,0px) + 12px))}
+.fa-next{right:max(20px, calc(env(safe-area-inset-right,0px) + 12px))}
+@media (max-width:600px){.fa{width:46px;height:46px}.fa-prev{left:max(14px, env(safe-area-inset-left,0px))}.fa-next{right:max(14px, env(safe-area-inset-right,0px))}}
+.port-note{margin:26px 0 0;color:var(--muted);font-size:14px;display:flex;gap:10px;align-items:center}
+.port-note::before{content:"";width:28px;height:1px;background:var(--gold)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(10,6,4,.94);backdrop-filter:blur(8px);padding:calc(env(safe-area-inset-top,0px) + 56px) max(16px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 56px) max(16px, env(safe-area-inset-left,0px))}
+.lb[hidden]{display:none!important}
+.lb img{max-width:min(92vw,900px);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 40px 80px -20px #000}
+.lb.anim img{animation:lbIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes lbIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.lb.anim img{animation:none}}
+.lb .arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(26,17,12,.6)}
+.lb .arrow:hover{transform:translateY(-50%) scale(1.06)}
+.lb .prev{left:max(16px, env(safe-area-inset-left,0px))}.lb .next{right:max(16px, env(safe-area-inset-right,0px))}
+.lb .close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(16px, env(safe-area-inset-right,0px));transform:none}
+.lb .close:hover{transform:scale(1.06)}
+.lb .lbcount{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);left:0;right:0;text-align:center;font-size:12px;letter-spacing:.24em;color:var(--muted)}
+.lb .arrow{background:var(--gold);color:var(--gold-ink);border-color:var(--gold);box-shadow:0 8px 24px -6px rgba(0,0,0,.7)}
+.lb .arrow svg{width:22px;height:22px;stroke-width:2.5}
+@media (max-width:600px){
+  .lb{padding:calc(env(safe-area-inset-top,0px) + 72px) 12px calc(env(safe-area-inset-bottom,0px) + 24px)}
+  .lb img{max-width:100%}
+  .lb .arrow{width:46px;height:46px}
+  .lb .prev,.lb .next{top:50%;bottom:auto;transform:translateY(-50%)}
+  .lb .prev:hover,.lb .next:hover{transform:translateY(-50%)}
+  .lb .prev{left:max(10px, env(safe-area-inset-left,0px))}
+  .lb .next{right:max(10px, env(safe-area-inset-right,0px))}
+  .lb .close{top:calc(env(safe-area-inset-top,0px) + 14px);right:max(12px, env(safe-area-inset-right,0px));bottom:auto;transform:none}
+  .lb .close:hover{transform:none}
+  .lb .lbcount{top:calc(env(safe-area-inset-top,0px) + 28px);bottom:auto;left:max(16px, env(safe-area-inset-left,0px));right:auto;text-align:left}
+}
+
+/* floating whatsapp (phones) */
+.fab{position:fixed;z-index:40;right:max(16px, calc(env(safe-area-inset-right,0px) + 16px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);display:none;align-items:center;gap:10px;padding:14px 20px;border-radius:999px;background:var(--gold);color:var(--gold-ink);font-weight:600;text-decoration:none;box-shadow:0 12px 30px -8px rgba(0,0,0,.7)}
+.fab svg{width:20px;height:20px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:110px 32px;min-height:0}
+  .hero .shade{background:linear-gradient(180deg, rgba(26,17,12,.35) 0%, rgba(26,17,12,.75) 50%, var(--ground) 100%)}
+  .stamp{width:150px;height:150px;position:absolute;right:max(12px, env(safe-area-inset-right,0px));top:96px}
+  .stamp .core{inset:27px}.stamp .core b{font-size:36px}
+  .prints{grid-template-columns:minmax(0,1fr);gap:40px;max-width:480px}
+  .studio{grid-template-columns:minmax(0,1fr);gap:36px}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step+.step{border-left:0;border-top:1px solid var(--line)}
+  .fab{display:inline-flex}
+  .digits div{min-width:54px}.digits b{font-size:34px;min-width:54px}
+}
+@media (max-width:440px){
+  .stamp{display:none}
+  .actions .btn{flex:1 1 100%}
+  .bonus{grid-template-columns:minmax(0,1fr)}
+  .rec{width:100%;aspect-ratio:16/9}
+  .caption{flex-direction:column;align-items:stretch}
+  .caption .btn{width:100%}
+  .digits{gap:6px}.digits .sep{display:none}
+  .vf .top,.vf .bot{left:24px;right:24px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Gobbo Creative Studio">
+      <img src="logo.png" alt="Gobbo Creative Studio" width="600" height="243">
+    </a>
+    <a class="pill" href="#portfolio">Portfólio</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="lit" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="flash" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="kicker"><i></i>Ensaios no estúdio</span>
+      <h1><span class="l"><span class="out">Black</span></span><span class="l"><span class="gold">November</span></span></h1>
+      <p class="lead">Seu ensaio fotográfico profissional com <b>valor de Black Friday</b>, com bônus de <b>instax na hora</b> e <b>vídeo de backstage</b> de presente.</p>
+      <div class="actions">
+        <a class="btn mag" data-pack="" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+          Quero meu ensaio
+        </a>
+        <a class="btn ghost" href="#ensaios">Ver as opções</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="count">
+  <div class="wrap">
+    <span class="lbl" id="clock-label">A condição termina em</span>
+    <div class="digits" aria-live="off">
+      <div><b id="d">00</b><small>dias</small></div><span class="sep">:</span>
+      <div><b id="h">00</b><small>horas</small></div><span class="sep">:</span>
+      <div><b id="m">00</b><small>min</small></div><span class="sep">:</span>
+      <div><b id="s">00</b><small>seg</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="marquees" aria-hidden="true">
+<div class="marquee"><div class="track" id="t1"><span>Black November</span><span>Até 4 trocas de roupa</span><span>Instax na hora</span><span>Vídeo backstage</span><span>Fotografe quando quiser</span></div></div>
+<div class="marquee b"><div class="track" id="t2"><span>Luz de estúdio</span><span>Direção de pose</span><span>Fotos editadas</span><span>Av. Fleming, 900</span><span>Só em novembro</span></div></div>
+</div>
+
+<section class="port" id="portfolio">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="label">Portfólio</p><h2>Feito aqui<br><em>no estúdio</em></h2></div>
+    </div>
+  </div>
+  <div class="film">
+    <button class="arrow fa fa-prev" id="pprev" type="button" aria-label="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="arrow fa fa-next" id="pnext" type="button" aria-label="Próximas fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="strip" id="strip">
+        <button class="frame" type="button" data-i="0"><img src="p11.jpg" alt="Ensaio de família com o cachorro" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 01</span></button>
+        <button class="frame" type="button" data-i="1"><img src="p24.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 02</span></button>
+        <button class="frame" type="button" data-i="2"><img src="p07.jpg" alt="Retrato masculino em estúdio" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 03</span></button>
+        <button class="frame" type="button" data-i="3"><img src="p12.jpg" alt="Ensaio pet com tutora" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 04</span></button>
+        <button class="frame" type="button" data-i="4"><img src="p01.jpg" alt="Retrato feminino no fundo infinito" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 05</span></button>
+        <button class="frame" type="button" data-i="5"><img src="p31.jpg" alt="Retrato feminino em cadeira" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 06</span></button>
+        <button class="frame" type="button" data-i="6"><img src="p27.jpg" alt="Ensaio pet com border collie" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 07</span></button>
+        <button class="frame" type="button" data-i="7"><img src="p22.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 08</span></button>
+        <button class="frame" type="button" data-i="8"><img src="p04.jpg" alt="Retrato masculino em estúdio" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 09</span></button>
+        <button class="frame" type="button" data-i="9"><img src="p13.jpg" alt="Ensaio pet com tutora" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 10</span></button>
+        <button class="frame" type="button" data-i="10"><img src="p10.jpg" alt="Tutor com o cachorro no ombro" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 11</span></button>
+        <button class="frame" type="button" data-i="11"><img src="p26.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 12</span></button>
+        <button class="frame" type="button" data-i="12"><img src="p02.jpg" alt="Retrato feminino no fundo infinito" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 13</span></button>
+        <button class="frame" type="button" data-i="13"><img src="p08.jpg" alt="Retrato masculino em estúdio" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 14</span></button>
+        <button class="frame" type="button" data-i="14"><img src="p16.jpg" alt="Ensaio pet com tutora" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 15</span></button>
+        <button class="frame" type="button" data-i="15"><img src="p32.jpg" alt="Retrato feminino em cadeira" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 16</span></button>
+        <button class="frame" type="button" data-i="16"><img src="p18.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 17</span></button>
+        <button class="frame" type="button" data-i="17"><img src="p05.jpg" alt="Retrato masculino em estúdio" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 18</span></button>
+        <button class="frame" type="button" data-i="18"><img src="p28.jpg" alt="Ensaio pet com border collie" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 19</span></button>
+        <button class="frame" type="button" data-i="19"><img src="p14.jpg" alt="Ensaio pet com tutora" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 20</span></button>
+        <button class="frame" type="button" data-i="20"><img src="p20.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 21</span></button>
+        <button class="frame" type="button" data-i="21"><img src="p03.jpg" alt="Retrato feminino no fundo infinito" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 22</span></button>
+        <button class="frame" type="button" data-i="22"><img src="p23.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 23</span></button>
+        <button class="frame" type="button" data-i="23"><img src="p09.jpg" alt="Retrato masculino em estúdio" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 24</span></button>
+        <button class="frame" type="button" data-i="24"><img src="p17.jpg" alt="Ensaio pet com tutora" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 25</span></button>
+        <button class="frame" type="button" data-i="25"><img src="p29.jpg" alt="Ensaio pet com border collie" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 26</span></button>
+        <button class="frame" type="button" data-i="26"><img src="p21.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 27</span></button>
+        <button class="frame" type="button" data-i="27"><img src="p06.jpg" alt="Retrato masculino em estúdio" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 28</span></button>
+        <button class="frame" type="button" data-i="28"><img src="p25.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 29</span></button>
+        <button class="frame" type="button" data-i="29"><img src="p15.jpg" alt="Ensaio pet com tutora" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 30</span></button>
+        <button class="frame" type="button" data-i="30"><img src="p19.jpg" alt="Retrato editorial feminino" loading="lazy" decoding="async"><span class="edge">GOBBO STUDIO · 31</span></button>
+    </div>
+  </div>
+  <div class="wrap"><p class="port-note">Use as setas ou arraste para ver mais. Toque numa foto para ampliar.</p></div>
+</section>
+
+<section id="ensaios">
+  <div class="wrap sec">
+    <div class="head">
+      <h2>Escolha<br><em>seu ensaio</em></h2>
+      <p>Valor de lançamento do estúdio, válido só para reservas pagas em novembro. Você escolhe a data depois.</p>
+    </div>
+    <div class="prints">
+      <article class="print tilt">
+        <div class="shot">
+          <div class="row"><div><div class="opt">Opção 01</div><h3>Mini sessão</h3></div></div>
+          <div class="price"><b>2</b><small>trocas<br>de roupa</small></div>
+          <ul><li>1 hora de ensaio</li><li>15 fotos editadas</li><li>1 foto instax</li></ul>
+        </div>
+        <div class="caption"><p>rápido e<br>certeiro</p><a class="btn" data-pack="Mini sessão" href="#">Quero saber o valor</a></div>
+      </article>
+      <article class="print tilt">
+        <div class="shot">
+          <div class="row"><div><div class="opt">Opção 02</div><h3>Completa</h3></div><span class="tag">Mais fotos</span></div>
+          <div class="price"><b>4</b><small>trocas<br>de roupa</small></div>
+          <ul><li>2 horas de ensaio</li><li>20 fotos editadas</li><li>3 fotos instax</li></ul>
+        </div>
+        <div class="caption"><p>sem pressa,<br>vários looks</p><a class="btn" data-pack="Completa" href="#">Quero saber o valor</a></div>
+      </article>
+    </div>
+    <div class="bonus">
+      <div class="rec" aria-hidden="true"><span id="tc">00:00:00</span></div>
+      <div>
+        <b>de presente!</b>
+        <p>Vídeo backstage editado, em colaboração com o estúdio.</p>
+        <small>Vale para as duas opções, pronto para postar nos stories.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="arrow close" id="lbx" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="arrow prev" id="lbp" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <img id="lbimg" alt="">
+  <button class="arrow next" id="lbn" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="lbcount" id="lbc"></div>
+</div>
+
+<section>
+  <div class="wrap sec studio">
+    <div class="vf" id="vf">
+      <video id="bsv" src="backstage.mp4?v=2" poster="estudio-set.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Bastidores de um ensaio no estúdio Gobbo"></video>
+      <button class="snd" id="snd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path id="sndw" d="M16 9l5 6M21 9l-5 6"/></svg><span>Ativar som</span></button>
+      <div class="hud" aria-hidden="true">
+        <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+        <div class="top"><span class="r">REC</span><span>4:5 · RAW</span></div>
+        <i class="af"></i>
+        <div class="bot"><span>ISO 100</span><span>f/8</span><span>1/125</span><span>5600K</span></div>
+      </div>
+    </div>
+    <div class="txt">
+      <p class="label">O estúdio</p>
+      <h2>Seu ensaio<br><em>acontece aqui</em></h2>
+      <p>Um espaço montado para retrato, com luz controlada e direção do começo ao fim. É só chegar.</p>
+      <ul class="kit">
+        <li><b>Fundo</b><span>Infinito branco e parede de tijolinho</span></li>
+        <li><b>Luz</b><span>Flashes com softbox e octabox</span></li>
+        <li><b>Extras</b><span>Instax impressa na hora e vídeo backstage</span></li>
+      </ul>
+      <div class="addr"><span class="label">Onde estamos</span><strong>Av. Fleming, 900 – Sala 5V</strong></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap sec">
+    <div class="head"><h2>Como<br><em>reservar</em></h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h4>Chame no WhatsApp</h4><p>Toque em reservar e diga qual opção você quer.</p></div>
+      <div class="step"><div class="n">02</div><h4>Pague em novembro</h4><p>Pagou até 30/11, o valor da Black fica garantido.</p></div>
+      <div class="step"><div class="n">03</div><h4>Escolha a data</h4><p>Fotografe agora ou nos próximos meses, conforme disponibilidade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <p class="label">Novembro acaba logo</p>
+    <h2>A luz está pronta.<br><em>Falta você.</em></h2>
+    <a class="btn big mag" data-pack="" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+      Falar no WhatsApp
+    </a>
+    <div class="phone">WhatsApp <span id="num">(31) 97226-6772</span><button class="copy" id="copy" type="button">Copiar</button></div>
+    <p class="rules"><strong>Condição válida para reservas e pagamentos realizados no mês de novembro.</strong> O ensaio poderá acontecer em outros meses, conforme disponibilidade de agenda.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>Gobbo Creative Studio</span><span>Av. Fleming, 900 – Sala 5V</span></div>
+</footer>
+
+<a class="fab" data-pack="" href="#" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+  WhatsApp
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia("(pointer: fine)").matches;
+
+  /* WhatsApp links */
+  var WHATS = "5531972266772";
+  document.querySelectorAll("[data-pack]").forEach(function(a){
+    var p = a.getAttribute("data-pack");
+    var msg = p ? "Oi, Gobbo! Quero saber o valor do ensaio " + p + " da Black November." : "Oi, Gobbo! Quero saber mais sobre os ensaios da Black November.";
+    a.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(msg);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  /* copy number */
+  var copyBtn = document.getElementById("copy");
+  copyBtn.addEventListener("click", function(){
+    var done = function(){ copyBtn.textContent = "Copiado"; setTimeout(function(){ copyBtn.textContent = "Copiar"; }, 1600); };
+    var fallback = function(){ var r = document.createRange(); r.selectNodeContents(document.getElementById("num")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText("+55 31 97226-6772").then(done, fallback); } catch(e){ fallback(); }
+  });
+
+  /* duplicate marquee content for seamless loop */
+  ["t1","t2"].forEach(function(id){ var t = document.getElementById(id); t.innerHTML += t.innerHTML; });
+
+  /* strobe flash on load */
+  var flash = document.querySelector(".flash");
+  if (!reduce && flash.animate){
+    flash.animate([{opacity:0},{opacity:.9,offset:.06},{opacity:0}], {duration:1100, delay:250, easing:"ease-out"});
+  }
+
+  /* hero spotlight: follows the pointer, orbits on its own otherwise */
+  var hero = document.querySelector(".hero");
+  var tx = 72, ty = 42, cx = 72, cy = 42, last = 0, t0 = performance.now();
+  if (fine){
+    hero.addEventListener("pointermove", function(e){
+      var r = hero.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width * 100; ty = (e.clientY - r.top) / r.height * 100; last = performance.now();
+    });
+  }
+  function loop(now){
+    if (now - last > 2500){ var k = (now - t0) / 1000; tx = 64 + Math.cos(k*.6)*16; ty = 46 + Math.sin(k*.9)*14; }
+    cx += (tx - cx) * .08; cy += (ty - cy) * .08;
+    hero.style.setProperty("--x", cx.toFixed(2) + "%"); hero.style.setProperty("--y", cy.toFixed(2) + "%");
+    requestAnimationFrame(loop);
+  }
+  if (!reduce) requestAnimationFrame(loop);
+
+  /* magnetic buttons */
+  if (fine && !reduce){
+    document.querySelectorAll(".mag").forEach(function(b){
+      b.addEventListener("pointermove", function(e){ var r = b.getBoundingClientRect(); b.style.transform = "translate(" + ((e.clientX - r.left - r.width/2) * .18) + "px," + ((e.clientY - r.top - r.height/2) * .3) + "px)"; });
+      b.addEventListener("pointerleave", function(){ b.style.transform = ""; });
+    });
+  }
+
+  /* instax tilt */
+  if (fine && !reduce){
+    document.querySelectorAll(".tilt").forEach(function(c){
+      c.addEventListener("pointermove", function(e){ var r = c.getBoundingClientRect(); var px = (e.clientX - r.left)/r.width - .5, py = (e.clientY - r.top)/r.height - .5;
+        c.style.transform = "rotate(0deg) rotateY(" + (px*14) + "deg) rotateX(" + (-py*14) + "deg) translateY(-8px)"; });
+      c.addEventListener("pointerleave", function(){ c.style.transform = ""; });
+    });
+  }
+
+  /* instax develops when it comes into view (stays readable at rest) */
+  if ("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("dev"); io.unobserve(en.target); } }); }, {threshold:.35});
+    document.querySelectorAll(".print").forEach(function(p){ io.observe(p); });
+  }
+
+  /* viewfinder slow zoom with scroll */
+  var vf = document.getElementById("vf"), vimg = vf.querySelector("video, img");
+  var bsv = document.getElementById("bsv"), snd = document.getElementById("snd");
+  snd.addEventListener("click", function(){
+    var on = bsv.muted; bsv.muted = !on;
+    if (on){ var pr = bsv.play(); if (pr && pr.catch) pr.catch(function(){}); }
+    snd.setAttribute("aria-pressed", on ? "true" : "false");
+    snd.querySelector("span").textContent = on ? "Som ligado" : "Ativar som";
+    document.getElementById("sndw").setAttribute("d", on ? "M16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14" : "M16 9l5 6M21 9l-5 6");
+  });
+  if (reduce){ bsv.removeAttribute("autoplay"); bsv.pause(); bsv.controls = true; }
+  if (!reduce){
+    window.addEventListener("scroll", function(){
+      var r = vf.getBoundingClientRect(), vh = innerHeight;
+      var p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+      vimg.style.transform = "scale(" + (1.18 - p*.16).toFixed(3) + ")";
+    }, {passive:true});
+  }
+
+  /* scroll reveal: only for blocks still below the fold, so the first frame is complete */
+  if ("IntersectionObserver" in window && !reduce){
+    var targets = document.querySelectorAll(".head, .print, .bonus, .vf, .studio .txt > *, .step, .final .wrap > *");
+    var ro = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting){ en.target.classList.remove("pre"); ro.unobserve(en.target); } }); }, {threshold:.15, rootMargin:"0px 0px -6% 0px"});
+    targets.forEach(function(t, i){
+      if (t.getBoundingClientRect().top > innerHeight){ t.classList.add("pre"); t.style.transitionDelay = ((i % 4) * 70) + "ms"; ro.observe(t); }
+    });
+  }
+
+  /* portfolio strip: drifts on its own, drag or swipe, arrows, lightbox */
+  var strip = document.getElementById("strip");
+  var originals = Array.prototype.slice.call(strip.children);
+  originals.forEach(function(f){ var c = f.cloneNode(true); c.setAttribute("aria-hidden","true"); c.tabIndex = -1; strip.appendChild(c); });
+  var paused = false, hovering = false, dragging = false, moved = 0, sx = 0, sl = 0, resumeT;
+  function half(){ return strip.scrollWidth / 2; }
+  function wrapPos(){ var h = half(); if (strip.scrollLeft >= h) strip.scrollLeft -= h; else if (strip.scrollLeft <= 0) strip.scrollLeft += h; }
+  function hold(ms){ paused = true; clearTimeout(resumeT); resumeT = setTimeout(function(){ paused = false; }, ms || 2500); }
+  var acc = 0;
+  function drift(){ if (!paused && !hovering && !dragging && !lbOpen){ acc += 1.3; if (acc >= 1){ strip.scrollLeft += Math.floor(acc); acc -= Math.floor(acc); wrapPos(); } } requestAnimationFrame(drift); }
+  if (!reduce) requestAnimationFrame(drift);
+  if (fine){ strip.addEventListener("pointerenter", function(){ hovering = true; }); strip.addEventListener("pointerleave", function(){ hovering = false; }); }
+  strip.addEventListener("touchstart", function(){ hold(4000); }, {passive:true});
+  strip.addEventListener("scroll", function(){ if (!dragging) wrapPos(); }, {passive:true});
+  strip.addEventListener("pointerdown", function(e){ if (e.pointerType !== "mouse") return; dragging = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft; strip.classList.add("drag"); });
+  window.addEventListener("pointermove", function(e){ if (!dragging) return; var dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx)); strip.scrollLeft = sl - dx; });
+  window.addEventListener("pointerup", function(){ if (!dragging) return; dragging = false; strip.classList.remove("drag"); wrapPos(); hold(2500); });
+  function step(dir){ var w = strip.querySelector(".frame").getBoundingClientRect().width + 18; hold(3500); strip.scrollBy({left: dir * w, behavior: reduce ? "auto" : "smooth"}); }
+  document.getElementById("pprev").addEventListener("click", function(){ step(-1); });
+  document.getElementById("pnext").addEventListener("click", function(){ step(1); });
+
+  var lb = document.getElementById("lb"), lbimg = document.getElementById("lbimg"), lbc = document.getElementById("lbc"), cur = 0, lbOpen = false, lastFocus;
+  var srcs = originals.map(function(f){ var im = f.querySelector("img"); return {src: im.getAttribute("src"), alt: im.alt}; });
+  function show(i){ cur = (i + srcs.length) % srcs.length; lbimg.src = srcs[cur].src; lbimg.alt = srcs[cur].alt; lbc.textContent = String(cur+1).padStart(2,"0") + " / " + srcs.length; lb.classList.remove("anim"); void lb.offsetWidth; lb.classList.add("anim"); }
+  function openLb(i){ lastFocus = document.activeElement; lbOpen = true; lb.hidden = false; document.body.style.overflow = "hidden"; show(i); document.getElementById("lbx").focus(); }
+  function closeLb(){ lbOpen = false; lb.hidden = true; document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+  strip.addEventListener("click", function(e){ var f = e.target.closest(".frame"); if (!f || moved > 6){ moved = 0; return; } openLb(+f.dataset.i); });
+  document.getElementById("lbx").addEventListener("click", closeLb);
+  document.getElementById("lbp").addEventListener("click", function(){ show(cur-1); });
+  document.getElementById("lbn").addEventListener("click", function(){ show(cur+1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", function(e){ if (!lbOpen) return; if (e.key === "Escape") closeLb(); if (e.key === "ArrowLeft") show(cur-1); if (e.key === "ArrowRight") show(cur+1); });
+  var tx0 = null;
+  lb.addEventListener("touchstart", function(e){ tx0 = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener("touchend", function(e){ if (tx0 === null) return; var dx = e.changedTouches[0].clientX - tx0; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); tx0 = null; });
+
+  /* backstage timecode */
+  var tc = document.getElementById("tc"), tcs = 0;
+  setInterval(function(){ tcs++; var m = Math.floor(tcs/60), s = tcs%60; tc.textContent = "00:" + String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0"); }, 1000);
+
+  /* countdown */
+  var end = new Date("2026-11-30T23:59:59-03:00").getTime();
+  var label = document.getElementById("clock-label");
+  var el = { d:document.getElementById("d"), h:document.getElementById("h"), m:document.getElementById("m"), s:document.getElementById("s") };
+  function pad(n){ return String(n).padStart(2,"0"); }
+  function set(node, v){ if (node.textContent !== v){ node.textContent = v; node.classList.remove("tick"); void node.offsetWidth; node.classList.add("tick"); } }
+  function tick(){
+    var now = Date.now();
+    label.textContent = now <= end ? "A condição termina em" : "Black November encerrada";
+    var t = Math.max(0, Math.floor((end - now)/1000));
+    set(el.d, pad(Math.floor(t/86400))); set(el.h, pad(Math.floor(t%86400/3600)));
+    set(el.m, pad(Math.floor(t%3600/60))); set(el.s, pad(t%60));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
